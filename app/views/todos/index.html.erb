@@ -1,10 +1,14 @@
+<% content_for :title, "Todos" %>
+
 <h1>Todos</h1>
+<p class="subtitle">Add a task. Open another tab to watch it update live.</p>
 
 <turbo-frame id="new_todo">
   <%= render "form", todo: Todo.new %>
 </turbo-frame>
 
 <%= turbo_stream_from "todos" %>
+
 <ul id="todos-list">
   <%= render @todos %>
 </ul>

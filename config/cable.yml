@@ -6,7 +6,8 @@ development:
   adapter: async
 
 test:
-  adapter: test
+  # Async so system tests can observe live Turbo Stream broadcasts in-process.
+  adapter: async
 
 production:
   adapter: redis

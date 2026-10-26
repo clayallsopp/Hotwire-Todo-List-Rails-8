@@ -8,66 +8,197 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
- /* turbo-frame {
-    display: block;
-    border: 1px solid blue;
-} */
 
-.completed {
-  text-decoration: line-through;
-  color: #888; /* Optional: Change the color to indicate completion */
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #f4f6f8;
+  color: #1f2933;
+}
+
+.container {
+  max-width: 40rem;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+h1 {
+  margin: 0 0 0.25rem;
+}
+
+.subtitle {
+  margin: 0 0 1.5rem;
+  color: #52606d;
+}
+
+.notice,
+.alert {
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+}
+
+.notice {
+  background: #e3f9e5;
+  color: #0f7b3a;
+}
+
+.alert {
+  background: #fde8e8;
+  color: #9b1c1c;
+}
+
+.todo-form {
+  margin-bottom: 1.5rem;
+}
+
+.todo-form-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.todo-form-row label {
+  font-weight: 600;
+}
+
+.todo-form-row input[type="text"],
+.todo-form-row select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #cbd2d9;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.todo-form-row input[type="text"] {
+  flex: 1;
+  min-width: 0;
+}
+
+.todo-form-row input[type="submit"] {
+  padding: 0.5rem 0.9rem;
+  border: none;
+  border-radius: 6px;
+  background: #2f6fed;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.todo-form-row input[type="submit"]:hover {
+  background: #1f5ad4;
+}
+
+.error-explanation {
+  margin-bottom: 0.75rem;
+  color: #9b1c1c;
+}
+
+.error-explanation h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+}
+
+.error-explanation ul {
+  margin: 0;
+}
+
+.field_with_errors {
+  display: contents;
+}
+
+#todos-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .todo-item {
-    display: flex;
-    align-items: center;
-    gap: 16px; /* Space between elements */
-    padding: 8px;
-    border-bottom: 1px solid #eee; /* Optional: Add a separator between todos */
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.todo-status {
+  font-family: ui-monospace, monospace;
+  font-size: 1.1rem;
+}
+
+.todo-title {
+  flex: 1;
+  font-size: 1.1rem;
+}
+
+.completed,
+.todo-title.completed {
+  text-decoration: line-through;
+  color: #7b8794;
+}
+
+.todo-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.button_to {
+  display: inline;
+  margin: 0;
+}
+
+.inline-button,
+.delete-button {
+  padding: 0.25rem 0.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: white;
+}
+
+.inline-button {
+  background-color: #91bbe7;
+}
+
+.inline-button:hover {
+  background-color: #6aa3db;
+}
+
+.delete-button {
+  background-color: #e7858f;
+}
+
+.delete-button:hover {
+  background-color: #d46570;
+}
+
+.edit-link {
+  color: #2f6fed;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.page-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .container {
+    margin: 0;
+    border-radius: 0;
+    min-height: 100vh;
   }
-  
-  .todo-status {
-    font-family: monospace;
-    font-size: 1.2em;
+
+  .todo-form-row,
+  .todo-item {
+    flex-wrap: wrap;
   }
-  
-  .todo-title {
-    flex: 1; /* Allow the title to take up remaining space */
-    font-size: 1.2em;
-  }
-  
-  .todo-title.completed {
-    text-decoration: line-through;
-    color: #888;
-  }
-  
-  .todo-actions {
-    display: flex;
-    gap: 8px; /* Space between buttons */
-  }
-  
-  .inline-button, .delete-button {
-    padding: 4px 8px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9em;
-  }
-  
-  .inline-button {
-    background-color: #91bbe7;
-    color: white;
-  }
-  
-  .inline-button:hover {
-    background-color: ;
-  }
-  
-  .delete-button {
-    background-color: #e7858f;
-    color: white;
-  }
-  
-  .delete-button:hover {
-    background-color: #e7858f;
-  }
+}
